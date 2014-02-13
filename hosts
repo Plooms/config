@@ -1,0 +1,17 @@
+#
+# /etc/hosts: static lookup table for host names
+#
+
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+
+10.0.0.3	C0			C0
+10.0.0.101	C1			C1
+10.0.0.102	C2			C2
+10.0.0.103	C3			C3
+10.0.0.104	C4			C4
+
+
+
+# End of file

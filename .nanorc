@@ -1,0 +1,258 @@
+set const
+set smooth
+set nowrap
+#set boldtext
+
+#green", "red", "blue",
+#"white", "yellow", "cyan", "magenta" and
+#"black", with the optional prefix "bright" for foreground colors.
+
+
+
+########### bash files ###########
+##
+
+
+# old syntax for bash specific shit
+# syntax "sh" "\.sh$" "Makefile" "\.bashrc" "bashrc" "\.bash_aliases" "bash_aliases" "\.bash_profile" "bash_profile" "11-media-ss" "12-home" "13-etc-ss" "14-home-ss" "15-bin-ss" "16-website-ss" "17-TipsTricks-ss" "chmall" "clean-download-folder" "clean-tilde-backups" "COLOR-SCRIPT" "crm" "enc1" "enc1-check-mount" "enc2" "enc2-check-mount" "f" "fix-desktop" "gateway" "HDDs" "HDDs-Directories" "HDDs-mount" "ln2tb" "ln2tb-add" "ln2tb-anime-add" "ln2tb-anime-add-batch" "ln2tb-anime-add-single" "ln2tb-anime-delete" "ln2tb-anime-delete-batch" "ln2tb-anime-delete-episodes" "ln2tb-anime-delete-single" "ln2tb-anime-find" "ln2tb-anime-find-batch" "ln2tb-anime-find-single" "ln2tb-delete" "ln2tb-dupes" "ln2tb-find" "ln2tb-movie-delete" "ln2tb-movie-delete-batch" "ln2tb-movie-delete-single" "ln2tb-movie-find" "ln2tb-movie-find-batch" "ln2tb-movie-find-single" "ln2tb-movie-resolution" "ln2tb-resolution" "ln2tb.sh" "ln2tb-symlinks" "ln2tb-tv-add" "ln2tb-tv-add-batch" "ln2tb-tv-add-single" "ln2tb-tv-delete" "ln2tb-tv-delete-batch" "ln2tb-tv-delete-episodes" "ln2tb-tv-delete-single" "ln2tb-tv-find" "ln2tb-tv-find-batch" "ln2tb-tv-find-single" "ln2tb-video" "ln2tb-video-convert" "ln2tb-video-join" "ln2tb-video-splice" "LVM" "monitor-dpms" "move" "move1" "move-window-to-primary" "move-window-to-secondary" "p" "parent" "perms" "program" "rbt" "router" "se" "sht" "smplayer-media" "startup-programs" "tv" "tv-move" "VAR-SCRIPT" "vpn" "xx" "yt"
+
+# New syntax (everything :D )
+syntax "all" ".*"
+
+icolor brightgreen "^[0-9A-Z_]+\(\)"
+color brightgreen "\<(case|do|done|elif|else|esac|exit|fi|for|function|if|in|read|return|select|shift|then|time|until|while)\>"
+color brightgreen "(\{|\}|\(|\)|\;|\]|\[|`|\\|\$|<|>|!|=|&|\|)"
+color brightgreen "-[Ldefgruwx]\>"
+color brightgreen "-(eq|ne|gt|lt|ge|le|s|n|z)\>"
+color brightblue "\<(cat|cd|chmod|chown|cp|echo|env|export|grep|install|let|ln|make|mkdir|mv|rm|sed|set|tar|touch|umask|unset|sudo|systemctl|yaourt|rsync|mount|source)\>"
+icolor brightred "\$\{?[0-9A-Z_!@#$*?-]+\}?"
+color brightmagenta "(^|[[:space:]])#.*$"
+color brightyellow ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+color brightgreen "[[:space:]]+$"
+
+
+
+
+
+
+########### pkgbuild files ###########
+##
+syntax "pkgbuild" "^.*PKGBUILD$"
+color green start="^" end="$"
+color cyan "^.*(pkgname|pkgver|pkgrel|pkgdesc|force|url|license|install|source|md5sums|groups|backup|depends|makedepends|conflicts|provides|replaces).*=.*$" 
+color brightcyan "<(pkgname|pkgver|pkgrel|pkgdesc|force|url|license|install|source|md5sums|groups|backup|depends|makedepends|conflicts|provides|replaces)>"  
+color cyan ".install" 
+#color brightwhite "=" "'" "(" ")" """ "#.*$" "," "{" "}"
+#color brightcyan "($|${|$()(pkgname|pkgver|pkgrel|pkgdesc|force|url|license|install|source|md5sums|groups|backup|depends|makedepends|conflicts|provides|replaces|startdir)(|}|))" 
+color brightred "build()"
+color brightred "<(configure|make)>"
+color red "<(DESTDIR|PREFIX|prefix|sysconfdir|datadir|libdir|includedir|mandir)>"
+
+#green", "red", "blue",
+#"white", "yellow", "cyan", "magenta" and
+#"black", with the optional prefix "bright"
+#for foreground colors.
+
+
+########### sed files ###########
+##
+syntax "sed" "\.sed$"
+header "^#!.*bin/(env +)?sed( |$)"
+
+color red "[|^$.*+]"
+color brightyellow "\{[0-9]+,?[0-9]*\}"
+color brightmagenta "\\."
+color brightblack "(^|[[:space:]])#([^{].*)?$"
+color ,green "[[:space:]]+$"
+color ,red "        +"
+
+
+
+########### zsh files ###########
+##
+syntax "zshrc" "\.?zshrc$"
+## Keywords
+color red "\<(autoload|prompt(init)?|zstyle|zmodload|compinit|setopt|export|source)\>"
+color brightmagenta "\<(alias|bindkey|function)\>"
+## Strings
+icolor white ""(\\.|[^"])*""
+icolor white "'(\\.|[^'])*'"
+## Comments
+icolor brightblue "^[[:space:]]*#.*$"
+icolor cyan "^[[:space:]]*##.*$"
+
+
+########### systemd files ###########
+##
+syntax "systemd" "\.(service|socket)$"
+header "^\[Unit\]$"
+
+color cyan "^(Accept|After|Alias|AllowIsolate|Also|ANSI_COLOR|_AUDIT_LOGINUID|_AUDIT_SESSION|Backlog|Before|BindIPv6Only|BindsTo|BindToDevice|BlockIOReadBandwidth|BlockIOWeight|BlockIOWriteBandwidth|_BOOT_ID|Broadcast|BUG_REPORT_URL|BusName|Capabilities|CapabilityBoundingSet|CHASSIS|cipher|class|_CMDLINE|CODE_FILE|CODE_FUNC|CODE_LINE|_COMM|Compress|ConditionACPower|ConditionCapability|ConditionDirectoryNotEmpty|ConditionFileIsExecutable|ConditionFileNotEmpty|ConditionHost|ConditionKernelCommandLine|ConditionNull|ConditionPathExists|ConditionPathExistsGlob|ConditionPathIsDirectory|ConditionPathIsMountPoint|ConditionPathIsReadWrite|ConditionPathIsSymbolicLink|ConditionSecurity|ConditionVirtualization|Conflicts|ControlGroup|ControlGroupAttribute|ControlGroupModify|ControlGroupPersistent|controllers|Controllers|CPE_NAME|CPUAffinity|CPUSchedulingPolicy|CPUSchedulingPriority|CPUSchedulingResetOnFork|CPUShares|CrashChVT|CrashShell|__CURSOR|debug|DefaultControllers|DefaultDependencies|DefaultLimitAS|DefaultLimitCORE|DefaultLimitCPU|DefaultLimitDATA|DefaultLimitFSIZE|DefaultLimitLOCKS|DefaultLimitMEMLOCK|DefaultLimitMSGQUEUE|DefaultLimitNICE|DefaultLimitNOFILE|DefaultLimitNPROC|DefaultLimitRSS|DefaultLimitRTPRIO|DefaultLimitRTTIME|DefaultLimitSIGPENDING|DefaultLimitSTACK|DefaultStandardError|DefaultStandardOutput|Description|DeviceAllow|DeviceDeny|DirectoryMode|DirectoryNotEmpty|Documentation|DumpCore|entropy|Environment|EnvironmentFile|ERRNO|event_timeout|_EXE|ExecReload|ExecStart|ExecStartPost|ExecStartPre|ExecStop|ExecStopPost|ExecStopPre|filter|FONT|FONT_MAP|FONT_UNIMAP|ForwardToConsole|ForwardToKMsg|ForwardToSyslog|FreeBind|freq|FsckPassNo|fstab|_GID|Group|GuessMainPID|HandleHibernateKey|HandleLidSwitch|HandlePowerKey|HandleSuspendKey|hash|HibernateKeyIgnoreInhibited|HOME_URL|_HOSTNAME|ICON_NAME|ID|IdleAction|IdleActionSec|ID_LIKE|ID_MODEL|ID_MODEL_FROM_DATABASE|IgnoreOnIsolate|IgnoreOnSnapshot|IgnoreSIGPIPE|InaccessibleDirectories|InhibitDelayMaxSec|init|IOSchedulingClass|IOSchedulingPriority|IPTOS|IPTTL|JobTimeoutSec|JoinControllers|KeepAlive|KEYMAP|KEYMAP_TOGGLE|KillExcludeUsers|KillMode|KillOnlyUsers|KillSignal|KillUserProcesses|LidSwitchIgnoreInhibited|LimitAS|LimitCORE|LimitCPU|LimitDATA|LimitFSIZE|LimitLOCKS|LimitMEMLOCK|LimitMSGQUEUE|LimitNICE|LimitNOFILE|LimitNPROC|LimitRSS|LimitRTPRIO|LimitRTTIME|LimitSIGPENDING|LimitSTACK|link_priority|valueListenDatagram|ListenFIFO|ListenMessageQueue|ListenNetlink|ListenSequentialPacket|ListenSpecial|ListenStream|LogColor|LogLevel|LogLocation|LogTarget|luks|_MACHINE_ID|MakeDirectory|Mark|MaxConnections|MaxFileSec|MaxLevelConsole|MaxLevelKMsg|MaxLevelStore|MaxLevelSyslog|MaxRetentionSec|MemoryLimit|MemorySoftLimit|MESSAGE|MESSAGE_ID|MessageQueueMaxMessages|MessageQueueMessageSize|__MONOTONIC_TIMESTAMP|MountFlags|NAME|NAutoVTs|Nice|NonBlocking|NoNewPrivileges|NotifyAccess|OnActiveSec|OnBootSec|OnCalendar|OnFailure|OnFailureIsolate|OnStartupSec|OnUnitActiveSec|OnUnitInactiveSec|OOMScoreAdjust|Options|output|PAMName|PartOf|PassCredentials|PassSecurity|PathChanged|PathExists|PathExistsGlob|PathModified|PermissionsStartOnly|_PID|PIDFile|PipeSize|PowerKeyIgnoreInhibited|PRETTY_HOSTNAME|PRETTY_NAME|Priority|PRIORITY|PrivateNetwork|PrivateTmp|PropagatesReloadTo|pss|RateLimitBurst|RateLimitInterval|ReadOnlyDirectories|ReadWriteDirectories|__REALTIME_TIMESTAMP|ReceiveBuffer|RefuseManualStart|RefuseManualStop|rel|ReloadPropagatedFrom|RemainAfterExit|RequiredBy|Requires|RequiresMountsFor|RequiresOverridable|Requisite|RequisiteOverridable|ReserveVT|ResetControllers|Restart|RestartPreventExitStatus|RestartSec|RootDirectory|RootDirectoryStartOnly|RuntimeKeepFree|RuntimeMaxFileSize|RuntimeMaxUse|RuntimeWatchdogSec|samples|scale_x|scale_y|Seal|SecureBits|_SELINUX_CONTEXT|SendBuffer|SendSIGKILL|Service|ShowStatus|ShutdownWatchdogSec|size|SmackLabel|SmackLabelIPIn|SmackLabelIPOut|SocketMode|Sockets|SourcePath|_SOURCE_REALTIME_TIMESTAMP|SplitMode|StandardError|StandardInput|StandardOutput|StartLimitAction|StartLimitBurst|StartLimitInterval|static_node|StopWhenUnneeded|Storage|string_escape|none|replaceSuccessExitStatus|SupplementaryGroups|SUPPORT_URL|SuspendKeyIgnoreInhibited|SyslogFacility|SYSLOG_FACILITY|SyslogIdentifier|SYSLOG_IDENTIFIER|SyslogLevel|SyslogLevelPrefix|SYSLOG_PID|SystemCallFilter|SYSTEMD_ALIAS|_SYSTEMD_CGROUP|_SYSTEMD_OWNER_UID|SYSTEMD_READY|_SYSTEMD_SESSION|_SYSTEMD_UNIT|_SYSTEMD_USER_UNIT|SYSTEMD_WANTS|SystemKeepFree|SystemMaxFileSize|SystemMaxUse|SysVStartPriority|TCPCongestion|TCPWrapName|timeout|TimeoutSec|TimeoutStartSec|TimeoutStopSec|TimerSlackNSec|Transparent|_TRANSPORT|tries|TTYPath|TTYReset|TTYVHangup|TTYVTDisallocate|Type|_UID|UMask|Unit|User|UtmpIdentifier|VERSION|VERSION_ID|WantedBy|Wants|WatchdogSec|What|Where|WorkingDirectory)="
+color brightblue "^\.include\>"
+color red "="
+color brightmagenta "^\[(Unit|Install|Service|Socket)\]"
+color brightyellow "\$MAINPID"
+color brightcyan "\<(true|false)\>"
+color brightblack "(^|[[:space:]])#([^{].*)?$"
+color ,green "[[:space:]]+$"
+color ,red "        +"
+
+
+########### conf files ###########
+##
+syntax "conf" "\.c[o]?nf$"
+## Strings
+icolor white ""(\\.|[^"])*""
+## Comments
+icolor brightblue "^[[:space:]]*#.*$"
+icolor cyan "^[[:space:]]*##.*$"
+
+
+########### html files ###########
+##
+syntax "html" "\.htm[l]?$"
+color brightblue start="<" end=">"
+color red "&[^;[[:space:]]]*;"
+color yellow "".*"|qq\|.*\|"
+color red "(alt|bgcolor|height|href|label|longdesc|name|onclick|onfocus|onload|onmouseover|size|span|src|style|target|type|value|width)="
+
+
+########### ini files ###########
+##
+syntax "ini" "\.(ini|desktop|lfl|override)$" "(mimeapps\.list|pinforc|setup\.cfg)$" "weechat/.+\.conf$"
+header "^\[[A-Za-z]+\]$"
+color brightcyan "\<(true|false)\>"
+color cyan "^[[:space:]]*[^=]*="
+color brightmagenta "^[[:space:]]*\[.*\]$"
+color red "[=;]"
+color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'"
+color brightblack "(^|[[:space:]])#([^{].*)?$"
+color ,green "[[:space:]]+$"
+color ,red "        +"
+
+
+########### manpages files ###########
+##
+syntax "man" "\.[1-9]x?$"
+color green "\.(S|T)H.*$"
+color brightgreen "\.(S|T)H" "\.TP"
+color brightred "\.(BR?|I[PR]?).*$"
+color brightblue "\.(BR?|I[PR]?|PP)"
+color brightwhite "\\f[BIPR]"
+color yellow "\.(br|DS|RS|RE|PD)"
+
+
+########### nanorc files ###########
+##
+syntax "nanorc" "\.?nanorc$"
+## Possible errors and parameters
+icolor brightwhite "^[[:space:]]*((un)?set|include|syntax|i?color).*$"
+## Keywords
+icolor brightgreen "^[[:space:]]*(set|unset)[[:space:]]+(autoindent|backup|backupdir|backwards|boldtext|brackets|casesensitive|const|cut|fill|historylog|matchbrackets|morespace|mouse|multibuffer|noconvert|nofollow|nohelp|nonewlines|nowrap|operatingdir|preserve|punct)\>" "^[[:space:]]*(set|unset)[[:space:]]+(quickblank|quotestr|rebinddelete|rebindkeypad|regexp|smarthome|smooth|speller|suspend|tabsize|tabstospaces|tempfile|view|whitespace|wordbounds)\>"
+icolor green "^[[:space:]]*(set|unset|include|syntax)\>"
+## Colors
+icolor yellow "^[[:space:]]*i?color[[:space:]]*(bright)?(white|black|red|blue|green|yellow|magenta|cyan)?(,(white|black|red|blue|green|yellow|magenta|cyan))?\>"
+icolor brightmagenta "^[[:space:]]*i?color\>" "\<(start|end)="
+## Strings
+icolor white ""(\\.|[^"])*""
+## Comments
+icolor brightblue "^[[:space:]]*#.*$"
+icolor cyan "^[[:space:]]*##.*$"
+
+
+########### php files ###########
+##
+syntax "php" "\.php$" "\.php[2345s]$" "\.phtml$"
+#functions
+color brightmagenta "([A-Za-z0-9])"
+#numbers
+color brightblue "[0-9]"
+#special
+color brightwhite "(^|[^A-Za-z0-9])(<\?php|\?>|var|and|or|default|class|extends|true|false|global|function|new|switch|case|break|next|prev|elseif|if|else|foreach|for|as|do|while|exit|die|declare|require_once|require|include_once|include|return|echo|static|array|isset)([^A-Za-z0-9])"
+#types
+color brightred "([^A-Za-z0-9])|[^A-Za-z](null|int|string|float|bool|object|resource)[^A-Za-z0-9_]+[^A-Za-z]"
+#strings
+color brightyellow ""(\\.|[^\"])*""
+color brightyellow "'(\\.|[^\'])*'"
+#Variables
+color brightcyan "\$[]\[A-Za-z0-9_'\"]*"
+#comments
+color green "//.*"
+color green "#.*"
+color green start="/\*" end="\*/"
+
+
+########### python files ###########
+##
+syntax "python" "\.py$"
+icolor brightred "def [0-9A-Z_]+"
+#Keyword Color
+color green "\<(and|as|assert|class|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|map|not|or|pass|print|raise|try|while|with|yield)\>"
+color brightmagenta "\<(continue|break|return)\>"
+# decorator color
+color brightgreen "@.*[(]"
+#Operator Color
+color yellow "[.:;,+*|=!\%@]" "<" ">" "/" "-" "&"
+#Parenthetical Color
+color brightmagenta "[(){}]" "\[" "\]"
+#String Color
+color cyan "['][^']*[^\\][']" "[']{3}.*[^\\][']{3}"
+color cyan "["][^"]*[^\\]["]" "["]{3}.*[^\\]["]{3}"
+color cyan start=""""[^"]" end=""""" start="'''[^']" end="'''"
+#color cyan start=""""[^"]" end=""""" start="'''[^']" end="'''"
+#color cyan start="([[:space:]]"""|^""")" end=""""" start="'''[^']" end="'''"
+#color cyan start=""""" end=""""" start="'''" end="'''"
+#color cyan start="("""[^"]|[^"]""")" end="("""[^"]|[^"]""")" start="'''[^']" end="'''"
+#color cyan start="\"\"\"" end="\"\"\""
+#Comment Color
+color brightblue "#.*$"
+
+
+
+########### apache files ###########
+##
+syntax "apacheconf" "httpd\.conf|mime\.types|vhosts\.d\\*"
+color yellow ".+"
+color brightcyan "(AcceptMutex|AcceptPathInfo|AccessFileName|Action|AddAlt|AddAltByEncoding|AddAltByType|AddCharset|AddDefaultCharset|AddDescription|AddEncoding)"
+color brightcyan "(AddHandler|AddIcon|AddIconByEncoding|AddIconByType|AddInputFilter|AddLanguage|AddModuleInfo|AddOutputFilter|AddOutputFilterByType|AddType|Alias|AliasMatch)"
+color brightcyan "(Allow|AllowCONNECT|AllowEncodedSlashes|AllowOverride|Anonymous|Anonymous_Authoritative|Anonymous_LogEmail|Anonymous_MustGiveEmail|Anonymous_NoUserID)"
+color brightcyan "(Anonymous_VerifyEmail|AssignUserID|AuthAuthoritative|AuthDBMAuthoritative|AuthDBMGroupFile|AuthDBMType|AuthDBMUserFile|AuthDigestAlgorithm)"
+color brightcyan "(AuthDigestDomain|AuthDigestFile|AuthDigestGroupFile|AuthDigestNcCheck|AuthDigestNonceFormat|AuthDigestNonceLifetime|AuthDigestQop|AuthDigestShmemSize)"
+color brightcyan "(AuthGroupFile|AuthLDAPAuthoritative|AuthLDAPBindDN|AuthLDAPBindPassword|AuthLDAPCharsetConfig|AuthLDAPCompareDNOnServer|AuthLDAPDereferenceAliases)"
+color brightcyan "(AuthLDAPEnabled|AuthLDAPFrontPageHack|AuthLDAPGroupAttribute|AuthLDAPGroupAttributeIsDN|AuthLDAPRemoteUserIsDN|AuthLDAPUrl|AuthName|AuthType|AuthUserFile)"
+color brightcyan "(BrowserMatch|BrowserMatchNoCase|BS2000Account|BufferedLogs|CacheDefaultExpire|CacheDirLength|CacheDirLevels|CacheDisable|CacheEnable|CacheExpiryCheck)"
+color brightcyan "(CacheFile|CacheForceCompletion|CacheGcClean|CacheGcDaily|CacheGcInterval|CacheGcMemUsage|CacheGcUnused|CacheIgnoreCacheControl|CacheIgnoreHeaders)"
+color brightcyan "(CacheIgnoreNoLastMod|CacheLastModifiedFactor|CacheMaxExpire|CacheMaxFileSize|CacheMinFileSize|CacheNegotiatedDocs|CacheRoot|CacheSize|CacheTimeMargin)"
+color brightcyan "(CGIMapExtension|CharsetDefault|CharsetOptions|CharsetSourceEnc|CheckSpelling|ChildPerUserID|ContentDigest|CookieDomain|CookieExpires|CookieLog|CookieName)"
+color brightcyan "(CookieStyle|CookieTracking|CoreDumpDirectory|CustomLog|Dav|DavDepthInfinity|DavLockDB|DavMinTimeout|DefaultIcon|DefaultLanguage|DefaultType)"
+color brightcyan "(DeflateBufferSize|DeflateCompressionLevel|DeflateFilterNote|DeflateMemLevel|DeflateWindowSize|Deny|Directory|DirectoryIndex|DirectoryMatch|DirectorySlash)"
+color brightcyan "(DocumentRoot|DumpIOInput|DumpIOOutput|EnableExceptionHook|EnableMMAP|EnableSendfile|ErrorDocument|ErrorLog|Example|ExpiresActive|ExpiresByType)"
+color brightcyan "(ExpiresDefault|ExtendedStatus|ExtFilterDefine|ExtFilterOptions|FileETag|Files|FilesMatch|ForceLanguagePriority|ForceType|ForensicLog|Group|Header)"
+color brightcyan "(HeaderName|HostnameLookups|IdentityCheck|IfDefine|IfModule|IfVersion|ImapBase|ImapDefault|ImapMenu|Include|IndexIgnore|IndexOptions|IndexOrderDefault)"
+color brightcyan "(ISAPIAppendLogToErrors|ISAPIAppendLogToQuery|ISAPICacheFile|ISAPIFakeAsync|ISAPILogNotSupported|ISAPIReadAheadBuffer|KeepAlive|KeepAliveTimeout)"
+color brightcyan "(LanguagePriority|LDAPCacheEntries|LDAPCacheTTL|LDAPConnectionTimeout|LDAPOpCacheEntries|LDAPOpCacheTTL|LDAPSharedCacheFile|LDAPSharedCacheSize)"
+color brightcyan "(LDAPTrustedCA|LDAPTrustedCAType|Limit|LimitExcept|LimitInternalRecursion|LimitRequestBody|LimitRequestFields|LimitRequestFieldSize|LimitRequestLine)"
+color brightcyan "(LimitXMLRequestBody|Listen|ListenBackLog|LoadFile|LoadModule|Location|LocationMatch|LockFile|LogFormat|LogLevel|MaxClients|MaxKeepAliveRequests)"
+color brightcyan "(MaxMemFree|MaxRequestsPerChild|MaxRequestsPerThread|MaxSpareServers|MaxSpareThreads|MaxThreads|MaxThreadsPerChild|MCacheMaxObjectCount|MCacheMaxObjectSize)"
+color brightcyan "(MCacheMaxStreamingBuffer|MCacheMinObjectSize|MCacheRemovalAlgorithm|MCacheSize|MetaDir|MetaFiles|MetaSuffix|MimeMagicFile|MinSpareServers|MinSpareThreads)"
+color brightcyan "(MMapFile|ModMimeUsePathInfo|MultiviewsMatch|NameVirtualHost|NoProxy|NumServers|NWSSLTrustedCerts|NWSSLUpgradeable|Options|Order|PassEnv|PidFile)"
+color brightcyan "(ProtocolEcho|Proxy|ProxyBadHeader|ProxyBlock|ProxyDomain|ProxyErrorOverride|ProxyIOBufferSize|ProxyMatch|ProxyMaxForwards|ProxyPass|ProxyPassReverse)"
+color brightcyan "(ProxyPreserveHost|ProxyReceiveBufferSize|ProxyRemote|ProxyRemoteMatch|ProxyRequests|ProxyTimeout|ProxyVia|ReadmeName|Redirect|RedirectMatch)"
+color brightcyan "(RedirectPermanent|RedirectTemp|RemoveCharset|RemoveEncoding|RemoveHandler|RemoveInputFilter|RemoveLanguage|RemoveOutputFilter|RemoveType|RequestHeader)"
+color brightcyan "(Require|RewriteBase|RewriteCond|RewriteEngine|RewriteLock|RewriteLog|RewriteLogLevel|RewriteMap|RewriteOptions|RewriteRule|RLimitCPU|RLimitMEM|RLimitNPROC)"
+color brightcyan "(Satisfy|ScoreBoardFile|Script|ScriptAlias|ScriptAliasMatch|ScriptInterpreterSource|ScriptLog|ScriptLogBuffer|ScriptLogLength|ScriptSock|SecureListen)"
+color brightcyan "(SendBufferSize|ServerAdmin|ServerAlias|ServerLimit|ServerName|ServerPath|ServerRoot|ServerSignature|ServerTokens|SetEnv|SetEnvIf|SetEnvIfNoCase|SetHandler)"
+color brightcyan "(SetInputFilter|SetOutputFilter|SSIEndTag|SSIErrorMsg|SSIStartTag|SSITimeFormat|SSIUndefinedEcho|SSLCACertificateFile|SSLCACertificatePath)"
+color brightcyan "(SSLCARevocationFile|SSLCARevocationPath|SSLCertificateChainFile|SSLCertificateFile|SSLCertificateKeyFile|SSLCipherSuite|SSLEngine|SSLMutex|SSLOptions)"
+color brightcyan "(SSLPassPhraseDialog|SSLProtocol|SSLProxyCACertificateFile|SSLProxyCACertificatePath|SSLProxyCARevocationFile|SSLProxyCARevocationPath|SSLProxyCipherSuite)"
+color brightcyan "(SSLProxyEngine|SSLProxyMachineCertificateFile|SSLProxyMachineCertificatePath|SSLProxyProtocol|SSLProxyVerify|SSLProxyVerifyDepth|SSLRandomSeed|SSLRequire)"
+color brightcyan "(SSLRequireSSL|SSLSessionCache|SSLSessionCacheTimeout|SSLUserName|SSLVerifyClient|SSLVerifyDepth|StartServers|StartThreads|SuexecUserGroup|ThreadLimit)"
+color brightcyan "(ThreadsPerChild|ThreadStackSize|TimeOut|TraceEnable|TransferLog|TypesConfig|UnsetEnv|UseCanonicalName|User|UserDir|VirtualDocumentRoot)"
+color brightcyan "(VirtualDocumentRootIP|VirtualHost|VirtualScriptAlias|VirtualScriptAliasIP|Win32DisableAcceptEx|XBitHack)"
+color yellow "<[^>]+>"
+color brightcyan "</?[A-Za-z]+"
+color brightcyan "(<|</|>)"
+color green "\"(\\.|[^\"])*\""
+color white "#.*"
+
+
