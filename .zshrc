@@ -140,7 +140,7 @@ echo "Config-Files:	$DIR/abz-config"
 echo -e "\n\n\nStarting DRY-RUN"
 echo ""
 
-sudo rsync -navhPi --del --exclude='.git' "$DIR"/abz-scripts/ /tmp/ass/
+sudo rsync -navhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
 
 echo ""
 echo -e "\n\n\n\n""Move new scripts to /usr/local/bin and delete old scripts?           y""\n\n\n\n"
@@ -202,7 +202,7 @@ echo "Config-Files:	$DIR/abz-config"
 echo -e "\n\n\nStarting DRY-RUN"
 echo ""
 
-sudo rsync -navhPi --del --exclude='.git' "$DIR"/abz-scripts/ /tmp/ass/
+sudo rsync -navhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
 
 echo -e "\n\n\n\n""Move new scripts to /usr/local/bin and delete old scripts?           y""\n\n\n\n"
 read confirmation
