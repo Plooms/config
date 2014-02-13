@@ -2,7 +2,7 @@ set const
 set smooth
 set nowrap
 #set boldtext
-
+ 
 #green", "red", "blue",
 #"white", "yellow", "cyan", "magenta" and
 #"black", with the optional prefix "bright" for foreground colors.
