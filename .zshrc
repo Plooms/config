@@ -148,11 +148,11 @@ read confirmation
 
 if [ "$confirmation" = "y" ]
 then
-sudo rsync -avhPi --del --exclude='.git' "$DIR"/abz-scripts/ /tmp/ass/
+sudo rsync -avhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
 
 clear
 echo ""
-echo "The files have been synced to /usr/local/bin"
+echo "The Scripts have been synced to /usr/local/bin"
 echo ""
 echo "Scripts:	$DIR/abz-scripts"
 echo "Tips & Tricks:	$DIR/abz-tips"
@@ -209,11 +209,11 @@ read confirmation
 
 if [ "$confirmation" = "y" ]
 then
-sudo rsync -avhPi --del --exclude='.git' "$DIR"/abz-scripts/ /tmp/ass
+sudo rsync -avhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
 
 clear
 echo ""
-echo "The files have been synced to /usr/local/bin"
+echo "The Scripts have been synced to /usr/local/bin"
 echo ""
 echo "Scripts:	$DIR/abz-scripts"
 echo "Tips & Tricks:	$DIR/abz-tips"
