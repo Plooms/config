@@ -110,9 +110,10 @@ xhost + >/dev/null
 # My Functions
 abz-scripts() {
 
-if [ -z $1 ]
+if [ -z "$1" ]
 then echo "USAGE : abz-scripts [ git | wget ]"
 echo -e "\n""NOTE: git is better (if available)"
+return
 fi
 
 
