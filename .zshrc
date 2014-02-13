@@ -93,7 +93,7 @@ alias s4='ssh C4' # Nas 4
 alias -s conf='sudo nano'
 alias -s cfg='sudo nano'
 alias -s log='sudo nano'
-
+alias -s txt='sudo nano'
 
 # alias -g s="sudo "  <<< Global alias = will work if it appears anywhere on the command line
 # alias -s txt="nano" <<< Suffix alias = it will open files ending with txt with nano , e.g file.txt
