@@ -70,7 +70,7 @@ alias nn='cd /usr/local/bin ; sudo nano $@'
 alias png='ping google.com'
 alias ki='sudo killall $@'
 alias pk='sudo pkill $@'
-#alias git-all='git add . ; git commit -m N/A ; git push origin'
+alias git-pack="git add . ; git commit -m N/A"
 
 #alias xclip='xclip -selection c'
 
