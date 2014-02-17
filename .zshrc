@@ -33,9 +33,13 @@ alias scr='sudo systemctl restart "$@"'
 alias scsp='sudo systemctl stop "$@"'
 alias scst='sudo systemctl status "$@"'
 alias calc='python'
-alias nt="nano $(mktemp)"
-alias gt="g $(mktemp)"
-alias dt="cd $(mktemp -d)"
+
+nt() { nano $(mktemp) ;}
+
+gt() { g $(mktemp) ;}
+
+dt() { cd $(mktemp -d) ;}
+
 alias up='uptime -p'
 alias gp='sudo gparted'
 
