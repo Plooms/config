@@ -34,9 +34,9 @@ alias scsp='sudo systemctl stop "$@"'
 alias scst='sudo systemctl status "$@"'
 alias calc='python'
 
-nt() { nano $(mktemp) ;}
+nt() { sudo nano $(mktemp) ;}
 
-gt() { g $(mktemp) ;}
+gt() { sudo geany $(mktemp) ;}
 
 dt() { cd $(mktemp -d) ;}
 
