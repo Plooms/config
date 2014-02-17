@@ -35,6 +35,7 @@ alias scst='sudo systemctl status "$@"'
 alias calc='python'
 alias nt="nano $(mktemp)"
 alias gt="g $(mktemp)"
+alias dt="cd $(mktemp -d)"
 alias up='uptime -p'
 alias gp='sudo gparted'
 
