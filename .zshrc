@@ -87,7 +87,9 @@ alias s2='ssh C2'	# Nas 2
 alias s2-vm='ssh C2-VM'	# Nas 2 (VM)
 
 alias s3='ssh C3'	# Nas 3 - Offsite
+
 alias s4='ssh C4'	# Nas 4
+alias s4-vm='ssh C4-VM'	# Nas 4 (VM)
 
 
 
