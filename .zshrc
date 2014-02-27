@@ -127,12 +127,19 @@ echo -e "\n""NOTE: git is better (if available)"
 return
 fi
 
+
 DIR="$(mktemp -d /tmp/abz-XXX)"
 cd "$DIR"
 
 if [ "$1" = "git" ]
 then
 # git way (best)
+if [ ! -f /bin/git ]
+then
+echo "Please install git"
+return
+fi
+
 echo "Downloading the Awesome ABZ-SCRIPTS into $DIR"
 git clone https://github.com/Plooms/bin.git abz-scripts 2>/dev/null
 git clone https://github.com/Plooms/tips.git abz-tips 2>/dev/null
