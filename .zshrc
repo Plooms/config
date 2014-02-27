@@ -219,6 +219,8 @@ clear
 echo ""
 echo "The Scripts have been synced to /usr/local/bin"
 echo ""
+else
+exit-note
 fi
 
 echo -e "\n\n\n\n""Move new zshrc to "/home/$USER/.zshrc" and "/root/.zshrc"  ?           y""\n\n\n\n"
