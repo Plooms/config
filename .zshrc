@@ -134,8 +134,9 @@ cd "$DIR"
 if [ "$1" = "git" ]
 then
 # git way (best)
-if [ ! -f /bin/git ]
-then
+if [  -f /bin/git -o -f /usr/bin/git ]
+then echo ""
+else
 echo "Please install git"
 return
 fi
@@ -189,8 +190,10 @@ mkdir abz-scripts >/dev/null
 mkdir abz-tips >/dev/null
 wget --quiet https://github.com/Plooms/bin/archive/master.tar.gz -O - | tar xz -C abz-scripts
 wget --quiet https://github.com/Plooms/tips/archive/master.tar.gz -O - | tar xz -C abz-tips
+wget --quiet https://github.com/Plooms/config/archive/master.tar.gz -O - | tar xz -C abz-config
 mv abz-scripts/bin-master/* abz-scripts/ ; rmdir abz-scripts/* 2>/dev/null
 mv abz-tips/tips-master/* abz-tips/ ; rmdir abz-tips/* 2>/dev/null
+mv abz-config/config-master/* abz-config/ ; rmdir abz-config/* 2>/dev/null
 echo -e "\n\n"
 echo "The files have been downloaded to:"
 echo "Scripts:	$DIR/abz-scripts/"
