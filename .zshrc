@@ -172,6 +172,7 @@ echo ""
 echo "The Scripts have been synced to /usr/local/bin"
 else
 exit-note
+echo "Canceled the Operation (go do it yourself b**ch)"
 fi
 
 echo -e "\n\n\n\n""Move new zshrc to "/home/$USER/.zshrc" and "/root/.zshrc"  ?           y""\n\n\n\n"
@@ -183,17 +184,13 @@ sudo rsync -avhPi "$DIR"/abz-config/.zshrc /home/"$USER"/
 sudo rsync -avhPi "$DIR"/abz-config/.zshrc /root/
 else
 exit-note
+echo "Canceled the Operation (go do it yourself b**ch)"
 fi
 
 exit-note
 
-else
-echo ""
-echo ""
-echo "Canceled the Operation (go do it yourself b**ch)"
 fi
-fi
-fi
+
 
 if [ "$1" = "wget" ]
 then
@@ -222,6 +219,8 @@ clear
 echo ""
 echo "The Scripts have been synced to /usr/local/bin"
 echo ""
+fi
+
 echo -e "\n\n\n\n""Move new zshrc to "/home/$USER/.zshrc" and "/root/.zshrc"  ?           y""\n\n\n\n"
 read confirmation
 
@@ -231,18 +230,15 @@ sudo rsync -avhPi "$DIR"/abz-config/.zshrc /home/"$USER"/
 sudo rsync -avhPi "$DIR"/abz-config/.zshrc /root/
 else
 exit-note
-fi
-
-
-exit-note
-
-else
-exit-note
 echo ""
 echo ""
 echo "Canceled the Operation (go do it yourself b**ch)"
 fi
+
+exit-note
+
 fi
+
 }
 
 
