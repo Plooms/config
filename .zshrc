@@ -119,6 +119,17 @@ gt() { sudo geany $(mktemp) ;}
 dt() { cd $(mktemp -d) ;}
 
 
+
+exit-note() {
+
+echo "The files have been downloaded to:"
+echo ""
+echo "Scripts:  $DIR/abz-scripts"
+echo "Tips & Tricks:    $DIR/abz-tips"
+echo "Config-Files:     $DIR/abz-config"
+
+}
+
 abz-scripts() {
 
 if [ -z "$1" ]
@@ -146,11 +157,6 @@ git clone https://github.com/Plooms/bin.git abz-scripts 2>/dev/null
 git clone https://github.com/Plooms/tips.git abz-tips 2>/dev/null
 git clone https://github.com/Plooms/config.git abz-config 2>/dev/null
 echo -e "\n\n"
-echo "The files have been downloaded to:"
-echo ""
-echo "Scripts:	$DIR/abz-scripts"
-echo "Tips & Tricks:	$DIR/abz-tips"
-echo "Config-Files:	$DIR/abz-config"
 echo -e "\n\n\nStarting DRY-RUN"
 echo ""
 sudo rsync -navhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
@@ -164,20 +170,13 @@ sudo rsync -avhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
 clear
 echo ""
 echo "The Scripts have been synced to /usr/local/bin"
-echo ""
-echo "Scripts:	$DIR/abz-scripts"
-echo "Tips & Tricks:	$DIR/abz-tips"
-echo "Config-Files:	$DIR/abz-config"
-else
-clear
-echo ""
-echo "The files have been downloaded to:"
-echo ""
-echo "Scripts:	$DIR/abz-scripts"
-echo "Tips & Tricks:	$DIR/abz-tips"
-echo "Config-Files:	$DIR/abz-config"
-echo ""
-echo ""
+
+echo -e "\n\n\n\n""Move new zshrc to /home/$USER/.zshrc & /root/.zshrc?           y""\n\n\n\n"
+read confirmation
+if [ "$confirmation" = "y" ]
+then
+sudo rsync -avhPi "$DIR"/abz-config/.zshrc /home/"$USER"/
+sudo rsync -avhPi "$DIR"/abz-config/.zshrc /root/
 echo "Canceled the Operation (go do it yourself b**ch)"
 fi
 fi
@@ -188,6 +187,7 @@ then
 echo "Downloading the Awesome ABZ-SCRIPTS into $DIR"
 mkdir abz-scripts >/dev/null
 mkdir abz-tips >/dev/null
+mkdir abz-config >/dev/null
 wget --quiet https://github.com/Plooms/bin/archive/master.tar.gz -O - | tar xz -C abz-scripts
 wget --quiet https://github.com/Plooms/tips/archive/master.tar.gz -O - | tar xz -C abz-tips
 wget --quiet https://github.com/Plooms/config/archive/master.tar.gz -O - | tar xz -C abz-config
@@ -198,7 +198,7 @@ echo -e "\n\n"
 echo "The files have been downloaded to:"
 echo "Scripts:	$DIR/abz-scripts/"
 echo "Tips & Tricks:	$DIR/abz-tips/"
-echo "Config-Files:	$DIR/abz-config"
+echo "Config-Files:	$DIR/abz-config/"
 echo -e "\n\n\nStarting DRY-RUN"
 echo ""
 sudo rsync -navhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
