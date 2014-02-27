@@ -192,7 +192,8 @@ echo ""
 echo ""
 echo "Canceled the Operation (go do it yourself b**ch)"
 fi
-
+fi
+fi
 
 if [ "$1" = "wget" ]
 then
