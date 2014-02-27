@@ -145,7 +145,7 @@ cd "$DIR"
 if [ "$1" = "git" ]
 then
 # git way (best)
-if [  -f /bin/git -o -f /usr/bin/git ]
+if [ -f /bin/git -o -f /usr/bin/git ]
 then echo ""
 else
 echo "Please install git"
@@ -170,16 +170,27 @@ sudo rsync -avhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
 clear
 echo ""
 echo "The Scripts have been synced to /usr/local/bin"
+else
+exit-note
+fi
 
 echo -e "\n\n\n\n""Move new zshrc to /home/$USER/.zshrc & /root/.zshrc?           y""\n\n\n\n"
 read confirmation
+
 if [ "$confirmation" = "y" ]
 then
 sudo rsync -avhPi "$DIR"/abz-config/.zshrc /home/"$USER"/
 sudo rsync -avhPi "$DIR"/abz-config/.zshrc /root/
+else
+exit-note
+fi
+
+else
+echo ""
+echo ""
 echo "Canceled the Operation (go do it yourself b**ch)"
 fi
-fi
+
 
 if [ "$1" = "wget" ]
 then
@@ -195,10 +206,6 @@ mv abz-scripts/bin-master/* abz-scripts/ ; rmdir abz-scripts/* 2>/dev/null
 mv abz-tips/tips-master/* abz-tips/ ; rmdir abz-tips/* 2>/dev/null
 mv abz-config/config-master/* abz-config/ ; rmdir abz-config/* 2>/dev/null
 echo -e "\n\n"
-echo "The files have been downloaded to:"
-echo "Scripts:	$DIR/abz-scripts/"
-echo "Tips & Tricks:	$DIR/abz-tips/"
-echo "Config-Files:	$DIR/abz-config/"
 echo -e "\n\n\nStarting DRY-RUN"
 echo ""
 sudo rsync -navhPi --del --exclude='.git' "$DIR"/abz-scripts/ /usr/local/bin/
@@ -212,17 +219,22 @@ clear
 echo ""
 echo "The Scripts have been synced to /usr/local/bin"
 echo ""
-echo "Scripts:	$DIR/abz-scripts"
-echo "Tips & Tricks:	$DIR/abz-tips"
-echo "Config-Files:	$DIR/abz-config"
+echo -e "\n\n\n\n""Move new zshrc to /home/$USER/.zshrc & /root/.zshrc?           y""\n\n\n\n"
+read confirmation
+
+if [ "$confirmation" = "y" ]
+then
+sudo rsync -avhPi "$DIR"/abz-config/.zshrc /home/"$USER"/
+sudo rsync -avhPi "$DIR"/abz-config/.zshrc /root/
 else
-clear
-echo ""
-echo "The files have been downloaded to:"
-echo ""
-echo "Scripts:	$DIR/abz-scripts"
-echo "Tips & Tricks:	$DIR/abz-tips"
-echo "Config-Files:	$DIR/abz-config"
+exit-note
+fi
+
+
+exit-note
+
+else
+exit-note
 echo ""
 echo ""
 echo "Canceled the Operation (go do it yourself b**ch)"
