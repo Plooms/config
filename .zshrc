@@ -174,7 +174,7 @@ else
 exit-note
 fi
 
-echo -e "\n\n\n\n""Move new zshrc to /home/$USER/.zshrc & /root/.zshrc?           y""\n\n\n\n"
+echo -e "\n\n\n\n""Move new zshrc to "/home/$USER/.zshrc" and "/root/.zshrc"  ?           y""\n\n\n\n"
 read confirmation
 
 if [ "$confirmation" = "y" ]
@@ -184,6 +184,8 @@ sudo rsync -avhPi "$DIR"/abz-config/.zshrc /root/
 else
 exit-note
 fi
+
+exit-note
 
 else
 echo ""
@@ -219,7 +221,7 @@ clear
 echo ""
 echo "The Scripts have been synced to /usr/local/bin"
 echo ""
-echo -e "\n\n\n\n""Move new zshrc to /home/$USER/.zshrc & /root/.zshrc?           y""\n\n\n\n"
+echo -e "\n\n\n\n""Move new zshrc to "/home/$USER/.zshrc" and "/root/.zshrc"  ?           y""\n\n\n\n"
 read confirmation
 
 if [ "$confirmation" = "y" ]
