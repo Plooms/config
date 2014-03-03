@@ -71,6 +71,7 @@ alias png='ping google.com'
 alias ki='sudo killall $@'
 alias pk='sudo pkill $@'
 alias git-pack="git add . ; git commit -m N/A"
+alias ms="mysql -uroot -p"$DB_PASSWORD" movies"
 
 #alias xclip='xclip -selection c'
 
