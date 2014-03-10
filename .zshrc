@@ -125,7 +125,7 @@ exit-note() {
 
 echo "The files have been downloaded to:"
 echo ""
-echo "Scripts:  $DIR/abz-scripts"
+echo "Scripts:  	$DIR/abz-scripts"
 echo "Tips & Tricks:    $DIR/abz-tips"
 echo "Config-Files:     $DIR/abz-config"
 
@@ -172,7 +172,6 @@ clear
 echo ""
 echo "The Scripts have been synced to /usr/local/bin"
 else
-exit-note
 echo "Canceled the Operation (go do it yourself b**ch)"
 fi
 
@@ -184,7 +183,6 @@ then
 sudo rsync -avhPi "$DIR"/abz-config/.zshrc /home/"$USER"/
 sudo rsync -avhPi "$DIR"/abz-config/.zshrc /root/
 else
-exit-note
 echo "Canceled the Operation (go do it yourself b**ch)"
 fi
 
