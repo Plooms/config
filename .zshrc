@@ -123,11 +123,12 @@ dt() { cd $(mktemp -d) ;}
 
 exit-note() {
 
+echo ""
 echo "The files have been downloaded to:"
 echo ""
-echo "Scripts:  	$DIR/abz-scripts"
-echo "Tips & Tricks:    $DIR/abz-tips"
-echo "Config-Files:     $DIR/abz-config"
+echo "Scripts:	$DIR/abz-scripts"
+echo "Tips & Tricks:	$DIR/abz-tips"
+echo "Config-Files:	$DIR/abz-config"
 
 }
 
