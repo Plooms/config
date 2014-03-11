@@ -109,7 +109,7 @@ alias -s txt='sudo nano'
 ## For zenity & Cron
 
 export DISPLAY=:0.0
-xhost + 2>/dev/null
+xhost + 2&>1/dev/null
 
 
 
