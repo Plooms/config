@@ -33,7 +33,7 @@ alias scr='sudo systemctl restart "$@"'
 alias scsp='sudo systemctl stop "$@"'
 alias scst='sudo systemctl status "$@"'
 alias calc='python'
-alias up='uptime -p'
+alias up='uptime'
 alias gp='sudo gparted'
 
 # Paths
@@ -45,7 +45,7 @@ alias c='cd /usr/local/bin/'
 
 # Edit & View Files
 
-alias an='systemd-analyze blame|cat;echo;systemd-analyze;echo -e "\n\n";uptime -p'
+alias an='systemd-analyze blame|cat;echo;systemd-analyze;echo -e "\n\n";uptime'
 alias ec='crontab -e'
 alias ny='sudo nano /etc/yaourtrc'
 alias np='sudo nano /etc/pacman.conf'
