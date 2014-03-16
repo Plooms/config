@@ -653,6 +653,7 @@ echo -e "${YELLOW}Status: ${COLOR_OFF} $STATUS"
 
 # For the command history file
 echo "
+Time: $(date)
 Command: $CMD_NAME
 Run Time: $RUN_TIME" >>| ~/.zhistory-times
 
