@@ -652,11 +652,12 @@ echo -e "${YELLOW}Run Time: ${COLOR_OFF} $RUN_TIME"
 echo -e "${YELLOW}Status: ${COLOR_OFF} $STATUS"
 
 # For the command history file
+if [[ "$END_TIME_SEC" -gt 5 ]] ;then
 echo "
 Time: $(date)
 Command: $CMD_NAME
 Run Time: $RUN_TIME" >>| ~/.zhistory-times
-
+fi
 	fi
 }
 
