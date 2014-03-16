@@ -651,7 +651,7 @@ echo -e "${YELLOW}Run Time: ${COLOR_OFF} $RUN_TIME"
 
 echo -e "${YELLOW}Status: ${COLOR_OFF} $STATUS"
 
-# For the command time history file (~/.zhisory-times)
+# For the command time history file (~/.zhistory-times)
 if [[ "$END_TIME_SEC" -gt 5 ]] ;then
 echo "
 Time: $(date)
