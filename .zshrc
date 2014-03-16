@@ -644,13 +644,17 @@ precmd () {
 
 RUN_TIME="$(echo $END_TIME_SEC s)"
 
-[[ "$END_TIME_MIN"  -gt 0 ]] &&  RUN_TIME="$(echo $RUN_TIME - $END_TIME_MIN Min)"
-[[ "$END_TIME_HR"  -gt 0 ]] &&  RUN_TIME="$(echo $RUN_TIME - $END_TIME_HR Hrs)"
+[[ "$END_TIME_MIN" -gt 0 ]] && RUN_TIME="$(echo $RUN_TIME - $END_TIME_MIN Min)"
+[[ "$END_TIME_HR"  -gt 0 ]] && RUN_TIME="$(echo $RUN_TIME - $END_TIME_HR Hrs)"
 
 echo -e "${YELLOW}Run Time: ${COLOR_OFF} $RUN_TIME"
 
 echo -e "${YELLOW}Status: ${COLOR_OFF} $STATUS"
 
+# For the command history file
+echo "
+Command: $CMD_NAME
+Run Time: $RUN_TIME" >>| ~/.zhistory-times
 
 	fi
 }
