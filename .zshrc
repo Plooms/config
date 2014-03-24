@@ -115,8 +115,8 @@ xhost + 2>&1 >/dev/null
 
 # My Functions ######################
 
-nt() { sudo nano $(mktemp) ;}
-gt() { sudo geany $(mktemp) ;}
+nt() { a="$(mktemp)" ; sudo nano $a ; echo $a ;}
+gt() { a="$(mktemp)" ; sudo geany $a ; echo $a ;}
 dt() { cd $(mktemp -d) ;}
 
 
