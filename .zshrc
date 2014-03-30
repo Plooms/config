@@ -13,7 +13,6 @@ printf "\e]2;Terminator\a"
 
 
 ### Linux Commands
-
 alias e='echo'
 alias df='df -h'
 alias fd='sudo fdisk -l'
@@ -35,16 +34,16 @@ alias scst='sudo systemctl status "$@"'
 alias calc='python'
 alias up='uptime'
 alias gp='sudo gparted'
+alias beep="beep 2>/dev/null"
+
 
 # Paths
-
 alias c='cd /usr/local/bin/'
 
 
 
 
 # Edit & View Files
-
 alias an='systemd-analyze blame|cat;echo;systemd-analyze;echo -e "\n\n";uptime'
 alias ec='crontab -e'
 alias ny='sudo nano /etc/yaourtrc'
@@ -61,7 +60,6 @@ alias sz='source /home/abz/.zshrc'
 
 
 # Personal Shortcuts
-
 alias dfree='df -h |grep /media |cut -b 26- | sort'
 alias g='sudo geany $@ 2>/dev/null '
 alias gg='cd /usr/local/bin ; sudo geany $@  2>/dev/null'
@@ -78,7 +76,6 @@ alias ms="mysql -uroot -p"$DB_PASSWORD" movies"
 
 
 # SSH Hosts
-
 alias s0='ssh C0' # Desktop
 
 alias s1='ssh C1'	# Nas 1
@@ -95,7 +92,6 @@ alias s4-vm='ssh C4-VM'	# Nas 4 (VM)
 
 
 # Global & Suffix aliases
-
 alias -s conf='sudo nano'
 alias -s cfg='sudo nano'
 alias -s log='sudo nano'
@@ -107,14 +103,12 @@ alias -s txt='sudo nano'
 
 
 ## For zenity & Cron
-
 export DISPLAY=:0.0
 xhost + 2>&1 >/dev/null
 
 
 
 # My Functions ######################
-
 nt() { a="$(mktemp)" ; sudo nano $a ; echo $a ;}
 gt() { a="$(mktemp)" ; sudo geany $a ; echo $a ;}
 dt() { cd $(mktemp -d) ;}
