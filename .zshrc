@@ -118,7 +118,7 @@ delink() {
 	tmpfile="$1-$(date)"
 	cp -a "$1" "$tmpfile"
 	mv "$tmpfile" "$1"
-	echo "(De-Linked) $1"
+	echo "(De-linked) $1"
 }
 
 
