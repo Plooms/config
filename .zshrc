@@ -643,7 +643,8 @@ precmd () {
 	END_TIME_MIN=$(( (END_TIME - START_TIME) / 60 ))
 	END_TIME_HR=$(( END_TIME_MIN / 60 ))
     
-	echo -e "\n\n\n${YELLOW}Command: ${COLOR_OFF} $CMD_NAME"
+	echo -e "\n\n\n${YELLOW}Command: ${COLOR_OFF}"
+	echo -e "$CMD_NAME"
 	echo ""
 
 RUN_TIME="$(echo $END_TIME_SEC s)"
