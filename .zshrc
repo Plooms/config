@@ -45,7 +45,7 @@ alias c='cd /usr/local/bin/'
 
 # Edit & View Files
 alias an='systemd-analyze blame|cat;echo;systemd-analyze;echo -e "\n\n";uptime'
-alias ec='EDITOR=geany ; crontab -e'
+alias ec='EDITOR=geany ; crontab -e &'
 alias ny='sudo nano /etc/yaourtrc'
 alias np='sudo nano /etc/pacman.conf'
 alias nf='sudo nano /etc/fstab'
