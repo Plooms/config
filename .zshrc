@@ -1,4 +1,3 @@
-
 export EDITOR="nano"
 export LANG="en_US.UTF-8"
 source /usr/local/bin/VAR-SCRIPT-COLOR
@@ -71,6 +70,7 @@ alias ki='sudo killall $@'
 alias pk='sudo pkill $@'
 alias git-pack="git add . ; git commit -m N/A"
 alias ms="mysql -uroot -p"$DB_PASSWORD" movies"
+alias on="onboard &"
 
 #alias xclip='xclip -selection c'
 
