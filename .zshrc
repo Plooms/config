@@ -6,7 +6,7 @@ source /usr/local/bin/VAR-SCRIPT-COLOR
 [ "$HOST" = C0 ] && [ $USER = "abz" ] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Prevent Screen Turning off
-[ "$HOST" = C0 ] && [ $USER = "abz" ] && sudo xset -dpms 2>/dev/null  && sudo xset s off 2>/dev/null
+[ $USER = "abz" ] && sudo xset -dpms 2>/dev/null  && sudo xset s off 2>/dev/null
 
 # Terminator title
 printf "\e]2;Terminator\a"
