@@ -1,3 +1,4 @@
+# testing
 export EDITOR="nano"
 export LANG="en_US.UTF-8"
 source /usr/local/bin/VAR-SCRIPT-COLOR
