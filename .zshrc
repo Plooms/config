@@ -118,12 +118,12 @@ gt() { a="$(mktemp)" ; sudo geany $a ; echo $a ;}
 dt() { cd $(mktemp -d) ;}
 
 
-delink() { 
-	tmpfile="$1-$(date)"
-	cp -a "$1" "$tmpfile"
-	mv "$tmpfile" "$1"
-	echo "(De-linked) $1"
-}
+#delink() { 
+#	tmpfile="$1-$(date)"
+#	cp -a "$1" "$tmpfile"
+#	mv "$tmpfile" "$1"
+#	echo "(De-linked) $1"
+#}
 
 
 
