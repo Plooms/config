@@ -642,7 +642,7 @@ precmd () {
     if ! [[ -z $START_TIME ]]; then
 	END_TIME=$(date +%s)
 	END_TIME_SEC=$(( END_TIME - START_TIME ))
-	END_TIME_MIN=$(( (END_TIME - START_TIME) / 60 ))
+	END_TIME_MIN=$(( (END_TIME - START_TIME) / 60.0 ))
 	END_TIME_HR=$(( END_TIME_MIN / 60.0 ))
     
 	echo -e "\n\n\n${YELLOW}Command: ${COLOR_OFF}"
