@@ -17,7 +17,7 @@ alias e='echo'
 alias df='df -h'
 alias fd='sudo fdisk -l'
 alias ls='ls -1'
-alias io='sudo iotop -o'
+alias io='sudo iotop -oPa'
 alias grep='grep -i --color'
 alias parallel='parallel --no-notice'
 alias s='sudo'
@@ -45,7 +45,7 @@ alias c='cd /usr/local/bin/'
 
 
 # Edit & View Files
-alias an='systemd-analyze blame|cat;echo;systemd-analyze;echo -e "\n\n";uptime'
+alias an='systemd-analyze blame|cat;echo;systemd-analyze;echo -e "\n\n";uptime -p'
 alias ec='crontab -e'
 [ "$HOST" = C0 ] && [ $USER = "abz" ]  && alias ec='EDITOR=geany ; crontab -e &'
 alias ny='sudo nano /etc/yaourtrc'
