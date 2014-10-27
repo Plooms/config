@@ -91,8 +91,8 @@ alias s3='ssh C3'	# Nas 3 - Offsite
 alias s4='ssh C4'	# Nas 4
 alias s4-vm='ssh C4-VM'	# Nas 4 (VM)
 
-alias ssv1-SB-CP="ssh SB-CP-VM"         # SB-CP (VM)
-alias ssv2-Sabnzbd="ssh Sabnzbd-VM"     # Sabnzbd (VM)
+alias ssv1-SB-CP-NZB="ssh SB-CP-NZB-VM"         # SB-CP-NZB (VM)
+#alias ssv2-Sabnzbd="ssh Sabnzbd-VM"     # Sabnzbd (VM)
 alias ssv3-Torrents="ssh Torrents-VM"   # Torrents (VM)
 
 
