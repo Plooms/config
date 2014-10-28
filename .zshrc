@@ -36,6 +36,7 @@ alias calc='python'
 alias up='uptime'
 alias gp='sudo gparted'
 alias beep="beep 2>/dev/null"
+alias pn="ping"
 
 
 # Paths
