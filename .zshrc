@@ -618,13 +618,6 @@ fi
 
 
 
-
-
-
-
-
-
-
 preexec () {
 
     START_TIME=$(date +%s)
