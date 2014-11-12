@@ -624,7 +624,6 @@ preexec () {
     START_TIME=$(date +%s)
     CMD_NAME=$1
     echo -e "\n"
-script -a out.log -t ass.log 2>ass2.log
 }
 precmd () {
     if [ $? = 0 ];
