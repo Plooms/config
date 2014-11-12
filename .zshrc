@@ -624,7 +624,7 @@ preexec () {
     START_TIME=$(date +%s)
     CMD_NAME=$1
     echo -e "\n"
-    
+    echo ass    
 }
 precmd () {
     if [ $? = 0 ];
