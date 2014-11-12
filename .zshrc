@@ -624,7 +624,7 @@ preexec () {
     START_TIME=$(date +%s)
     CMD_NAME=$1
     echo -e "\n"
-    script -c "$1" $(date +%s)-$1.log
+    script -q -c "$1" $(date +%s).log
 }
 precmd () {
     if [ $? = 0 ];
