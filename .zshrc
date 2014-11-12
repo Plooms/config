@@ -2,6 +2,7 @@ export EDITOR="nano"
 export LANG="en_US.UTF-8"
 source /usr/local/bin/VAR-SCRIPT-COLOR
 
+
 [ "$UID" != "0" ] && [ "$USER" = "abz" ] && source /usr/local/bin/VAR-SCRIPT
 [ "$HOST" = C0 ] && [ $USER = "abz" ] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
@@ -663,5 +664,6 @@ fi
 
 
 	fi
+
 }
 
