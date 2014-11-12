@@ -624,8 +624,7 @@ preexec () {
     START_TIME=$(date +%s)
     CMD_NAME=$1
     echo -e "\n"
-    script_name="$(date +%s)-($CMD_NAME)"
-    script -a "$script_name"
+    script  "kass"&
 
 }
 precmd () {
