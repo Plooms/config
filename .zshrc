@@ -1,5 +1,6 @@
 export EDITOR="nano"
-export LANG="en_US.UTF-8"
+export LANG="en_US"
+#export LANG="en_US.UTF-8"
 source /usr/local/bin/VAR-SCRIPT-COLOR
 
 [ "$UID" != "0" ] && [ "$USER" = "abz" ] && source /usr/local/bin/VAR-SCRIPT
