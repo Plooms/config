@@ -49,7 +49,7 @@ alias c='cd /usr/local/bin/'
 # Edit & View Files
 alias an='systemd-analyze blame|cat;echo;systemd-analyze;echo -e "\n\n";uptime -p'
 alias ec='crontab -e'
-[ "$HOST" = C0 ] && [ $USER = "abz" ]  && alias ec='EDITOR=geany ; crontab -e &'
+[ -z $SSH_CLIENT ] && [ "$HOST" = C0 ] && [ $USER = "abz" ]  && alias ec='EDITOR=geany ; crontab -e &'
 alias ny='sudo nano /etc/yaourtrc'
 alias np='sudo nano /etc/pacman.conf'
 alias nf='sudo nano /etc/fstab'
