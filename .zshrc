@@ -635,19 +635,18 @@ precmd () {
 
 	
     if ! [[ -z $START_TIME ]]; then
-	END_TIME=$(date +%s)
-	END_TIME_SEC=$(( END_TIME - START_TIME ))
-	END_TIME_MIN=$(echo "scale=1; ($END_TIME - $START_TIME) / 60" | bc )
-	END_TIME_HR=$(echo "scale=1; $END_TIME_MIN / 60" | bc)
+	END_TIME="$(date +%s)"
+	END_TIME_SEC="$(( END_TIME - START_TIME ))"
+	END_TIME_MIN="$(echo "scale=1; ($END_TIME - $START_TIME) / 60" | bc )"
+	END_TIME_HR="$(echo "scale=1; $END_TIME_MIN / 60" | bc)"
     
 	echo -e "\n\n\n${YELLOW}Command: ${COLOR_OFF}"
 	echo -e "$CMD_NAME"
 	echo ""
 
-RUN_TIME="$(echo $END_TIME_SEC s)"
-
-[[ "$END_TIME_MIN" -gt 1 ]] && RUN_TIME="$(echo $RUN_TIME - $END_TIME_MIN Min)"
-[[ "$END_TIME_HR"  -gt 1 ]] && RUN_TIME="$(echo $RUN_TIME - $END_TIME_HR Hrs)"
+	RUN_TIME="$(echo $END_TIME_SEC s)"
+	[[ "$END_TIME_MIN" -gt 1 ]] && RUN_TIME="$(echo $RUN_TIME - $END_TIME_MIN Min)"
+	[[ "$END_TIME_HR"  -gt 1 ]] && RUN_TIME="$(echo $RUN_TIME - $END_TIME_HR Hrs)"
 
 echo -e "${YELLOW}Run Time: ${COLOR_OFF} $RUN_TIME"
 echo -e "${YELLOW}Status: ${COLOR_OFF} $STATUS"
