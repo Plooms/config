@@ -164,9 +164,13 @@ return
 fi
 
 echo "Downloading the Awesome ABZ-SCRIPTS into $DIR"
-git clone https://github.com/Plooms/bin.git abz-scripts 2>/dev/null
-git clone https://github.com/Plooms/tips.git abz-tips 2>/dev/null
-git clone https://github.com/Plooms/config.git abz-config 2>/dev/null
+echo "Cloning abz-scripts"
+git clone --depth=1 https://github.com/Plooms/bin.git abz-scripts 2>/dev/null
+echo "Cloning abz-tips"
+git clone --depth=1 https://github.com/Plooms/tips.git abz-tips 2>/dev/null
+echo "Cloning abz-config"
+git clone --depth=1 https://github.com/Plooms/config.git abz-config 2>/dev/null
+
 echo -e "\n\n"
 echo -e "\n\n\nStarting DRY-RUN"
 echo ""
