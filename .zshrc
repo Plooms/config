@@ -289,17 +289,19 @@ key[PageDown]=${terminfo[knp]}
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 
-zle-line-init () {
-    echoti smkx
-}
 
-zle-line-finish () {
-    echoti rmkx
-}
 
-zle -N zle-line-init
 
-zle -N zle-line-finish
+#zle-line-init () {
+#    echoti smkx
+#}
+
+#zle-line-finish () {
+#    echoti rmkx
+#}
+ 
+#zle -N zle-line-init
+#zle -N zle-line-finish
 
 
 
