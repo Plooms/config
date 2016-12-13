@@ -82,20 +82,20 @@ alias ms="mysql -uroot -p"$DB_PASSWORD" movies"
 alias s0='ssh C0' # Desktop
 
 alias s1='ssh C1'	# Nas 1
-alias s1-vm='ssh C1-VM' # Nas 1 (VM)
+#alias s1-vm='ssh C1-VM' # Nas 1 (VM)
 
-alias s2='ssh C2'	# Nas 2
-alias s2-vm='ssh C2-VM'	# Nas 2 (VM)
+#alias s2='ssh C2'	# Nas 2
+#alias s2-vm='ssh C2-VM'	# Nas 2 (VM)
 
-alias s3='ssh C3'	# Nas 3 - Offsite
+#alias s3='ssh C3'	# Nas 3 - Offsite
 
-alias s4='ssh C4'	# Nas 4
-alias s4-vm='ssh C4-VM'	# Nas 4 (VM)
+#alias s4='ssh C4'	# Nas 4
+#alias s4-vm='ssh C4-VM'	# Nas 4 (VM)
 
 alias ssv1-SB-CP-NZB="ssh SB-CP-NZB-VM" # SB-CP-NZB (VM)
 #alias ssv2-Sabnzbd="ssh Sabnzbd-VM"    # Sabnzbd (VM)
-alias ssv3-Torrents="ssh Torrents-VM"   # Torrents (VM)
-alias ssv4-Proxy="ssh Proxy-VM"   	# Proxy (VM)
+#alias ssv3-Torrents="ssh Torrents-VM"   # Torrents (VM)
+#alias ssv4-Proxy="ssh Proxy-VM"   	# Proxy (VM)
 
 
 # Global & Suffix aliases
