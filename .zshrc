@@ -94,6 +94,7 @@ alias s1='ssh C1'	# Nas 1
 
 alias ssv1-SB-CP-NZB="ssh SB-CP-NZB-VM" # SB-CP-NZB (VM)
 alias ssv2-PBX="ssh root@PBX-VM"    # PBX (VM)
+alias ssv2-PBX2="ssh root@PBX-VM2"    # PBX2 (VM)
 #alias ssv2-Sabnzbd="ssh Sabnzbd-VM"    # Sabnzbd (VM)
 #alias ssv3-Torrents="ssh Torrents-VM"   # Torrents (VM)
 #alias ssv4-Proxy="ssh Proxy-VM"   	# Proxy (VM)
